@@ -1,9 +1,7 @@
 Problem 1: Program to count occurrences of a given character in a string.
 
 import java.util.Scanner;
-
 public class string_friquency {
-    
     public static int find_frequency(String str, char search) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -24,6 +22,115 @@ public class string_friquency {
 
         System.out.println(count);
         sc.close();
-    }
+    } 
+}
+
+
+
+Problem 2:  Determine whether a given string is Palindrome
+
+// both are check if you enter string and num also check 
+// palindrome or not 
+
+import java.util.*; 
+public class palindrome_string_num {
+   public static void main(String args[])  
+   {  
+      String original, reverse = ""; // Objects of String class  
+      Scanner in = new Scanner(System.in);   
+      System.out.println("Enter a string/number to check if it is a palindrome");  
+      original = in.nextLine();   
+      int length = original.length();   
+      for ( int i = length - 1; i >= 0; i-- )  
+         reverse = reverse + original.charAt(i);  
+      if (original.equals(reverse))  
+         System.out.println("Entered string/number is a palindrome.");  
+      else  
+         System.out.println("Entered string/number isn't a palindrome.");   
+        
+         in.close();
+   }  
+}  
+
+
+
+ Problem 3:  Biggest and smallest number in an array
+
+import java.util.Scanner;
+ class max_min {
+	 static int[] find_small_large(int[] arr, int n)
+	{
+		int mini = arr[0];
+		int maxi = arr[0];
+
+		for (int i = 0; i < n; i++) {
+			if (arr[i] < mini) {
+				mini = arr[i];
+			}
+			else if (arr[i] > maxi) {
+				maxi = arr[i];
+			}
+		}
+        
+		int[] ans = new int[2];
+		ans[0] = mini;
+		ans[1] = maxi;
+		return ans;
+	}
+
+	public static void main(String[] args)
+	{
+        Scanner sc=new Scanner(System.in);
+        // System.out.println("enter number " );
     
+        int[] arr = new int[5];
+        for(int i = 0; i < 5; i++){ 
+    	    arr[i] = sc.nextInt();
+        }		
+		int N = arr.length;
+
+		int[] ans = find_small_large(arr, N);
+		System.out.print("Maximum is: " + ans[1]);
+		System.out.print("\n"+ "Minimum is: " + ans[0]);
+    
+        sc.close();
+	}
+}
+
+
+Problem 4:  Swap two Strings Without Using any Third Variable
+
+public class Main {
+	public static void main(String args[])
+	{
+		
+		String a = "Hello";
+		String b = "World";
+
+        System.out.println("Strings before swap: a = " + a + " and b = "+b);
+	    a = a + b;
+		int x=a.length();
+		int y=b.length();
+		
+		b = a.substring(0,x - y);
+		
+		a = a.substring(y);
+		
+        System.out.println("Strings after swap: a = " + a + " and b = "+b);		
+	}	
+}
+
+
+
+Problem 5: Swap two numbers without using a temporary variable
+
+class HelloWorld {
+    public static void main(String[] args) {
+		int x = 10;
+		int y = 5;
+		x = x ^ y;
+		y = x ^ y;
+		x = x ^ y;
+		System.out.println("After swapping:" + " x = " + x + ", y = " + y);
+	}
 }
