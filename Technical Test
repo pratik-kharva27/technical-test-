@@ -1,0 +1,29 @@
+Problem 1: Program to count occurrences of a given character in a string.
+
+import java.util.Scanner;
+
+public class string_friquency {
+    
+    public static int find_frequency(String str, char search) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == search) {
+                count++;
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //input string 
+        String input = sc.nextLine();
+        //input searching char
+        char search = sc.next().charAt(0);
+    
+        int count = find_frequency(input, search);
+
+        System.out.println(count);
+        sc.close();
+    }
+    
+}
